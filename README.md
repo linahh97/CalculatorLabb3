@@ -1,1 +1,3 @@
-#Acceptanstest
+Acceptanstest
+
+Öppna applikationen
