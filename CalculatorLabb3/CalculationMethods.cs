@@ -16,12 +16,14 @@ namespace CalculatorLabb3
         }
 
         List<string> ListOfCalculations = new List<string>();
+
         public double Addition(double num1, double num2)
         {
             result = num1 + num2;
             Console.WriteLine($"Result: {num1} + {num2} = " + result);
             res = $"{num1} + {num2} = {result}";
             ListOfCalculations.Add(res);
+            Console.ReadLine();
             return result;
         }
 
@@ -31,6 +33,7 @@ namespace CalculatorLabb3
             Console.WriteLine($"Result: {num1} - {num2} = {result}");
             res = $"{num1} - {num2} = {result}";
             ListOfCalculations.Add(res);
+            Console.ReadLine();
             return result;
         }
 
@@ -40,15 +43,24 @@ namespace CalculatorLabb3
             Console.WriteLine($"Result: {num1} * {num2} = {result}");
             res = $"{num1} * {num2} = {result}";
             ListOfCalculations.Add(res);
+            Console.ReadLine();
             return result;
         }
 
         public double Division(double num1, double num2)
         {
             result = num1 / num2;
-            Console.WriteLine($"Result: {num1} / {num2} = {result}");
+            if (num2 == 0)
+            {
+                Console.WriteLine("Error, you can't divide by 0...");
+            }
+            else
+            {
+                Console.WriteLine($"Result: {num1} / {num2} = {result}");
+            }
             res = $"{num1} / {num2} = {result}";
             ListOfCalculations.Add(res);
+            Console.ReadLine();
             return result;
         }
 
@@ -57,7 +69,7 @@ namespace CalculatorLabb3
             Console.WriteLine("Previous calculations:");
             foreach (var item in ListOfCalculations)
             {
-                Console.WriteLine($"{item}");
+                Console.WriteLine(item);
             }
             if (ListOfCalculations.Count == 0)
             {
